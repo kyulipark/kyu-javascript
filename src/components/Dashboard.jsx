@@ -23,7 +23,7 @@ const Dashboard = () => {
     background-color: white;
     height: 100px;
     width: 100px;
-    margin: 50px;
+    margin: 30px;
     border-radius: 10px;
   `;
   return (

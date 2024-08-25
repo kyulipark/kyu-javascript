@@ -1,10 +1,14 @@
-// import { useState } from "react";
 import React from "react";
-// import "./App.css";
 import Router from "./shared/Router";
+import { PokemonContext } from "./context/PokemonContext";
+import MOCK_DATA from "./mock";
 
 function App() {
-  return <Router />;
+  return (
+    <PokemonContext.Provider value={{ MOCK_DATA }}>
+      <Router />
+    </PokemonContext.Provider>
+  );
 }
 
 export default App;

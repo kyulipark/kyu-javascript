@@ -2,11 +2,8 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
-// const PokemonCard = ({속성 이름들}) => {
 const PokemonCard = ({ data }) => {
-  if (!data) {
-    return <div>Loading...</div>;
-  }
+  const { id, korean_name } = data;
   const CardStyle = styled.div`
     border: 1px solid rgb(221, 221, 221);
     background-color: rgb(255, 255, 255);
@@ -30,18 +27,19 @@ const PokemonCard = ({ data }) => {
   return (
     <CardStyle
       onClick={() => {
-        navigate(`/PokemonDetail/${data.id}`);
+        navigate(`/detail?id=${data.id}`);
+        // navigate("/detail");
       }}
     >
       <img
-        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`}
-        alt={data.korean_name}
+        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
+        alt={korean_name}
       />
-      <h5>{data.korean_name}</h5>
-      <h6>NO.{data.id}</h6>
+      <h5>{korean_name}</h5>
+      <h6>NO.{id}</h6>
       <StBtn
         onClick={() => {
-          navigate("");
+          // navigate("");
         }}
       >
         추가
