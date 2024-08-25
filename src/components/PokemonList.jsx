@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useContext } from "react";
 import styled from "styled-components";
-import MOCK_DATA from "../mock";
 import PokemonCard from "./PokemonCard";
+import { PokemonContext } from "../context/PokemonContext";
 
 const PokemonList = () => {
   const ListStyle = styled.div`
@@ -14,22 +14,14 @@ const PokemonList = () => {
     border-radius: 10px;
     margin: 40px 180px;
   `;
-  const [cards, setCards] = useState([]);
-  useEffect(() => {
-    const data = MOCK_DATA;
-    console.log(1);
-    console.log(MOCK_DATA);
-    setCards(data);
-  }, []);
+  const { MOCK_DATA } = useContext(PokemonContext);
 
-  return cards.length == 0 ? null : (
+  return (
     <ListStyle>
-      {cards.map((card) => {
-        return <PokemonCard key={card.id} data={card} />;
-      })}
+      {MOCK_DATA.map((card) => (
+        <PokemonCard key={card.id} data={card} />
+      ))}
     </ListStyle>
   );
 };
 export default PokemonList;
-
-//모든 포켓몬을 리스트로 보여주는 컴포넌트(대시보드 아래부분), 기본적인 UI작성.
