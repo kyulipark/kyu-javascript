@@ -1,13 +1,12 @@
 import React from "react";
 import Router from "./shared/Router";
-import { PokemonContext } from "./context/PokemonContext";
-import MOCK_DATA from "./mock";
+import { PokemonProvider } from "./context/PokemonContext";
 
 function App() {
   return (
-    <PokemonContext.Provider value={{ MOCK_DATA }}>
+    <PokemonProvider>
       <Router />
-    </PokemonContext.Provider>
+    </PokemonProvider>
   );
 }
 
