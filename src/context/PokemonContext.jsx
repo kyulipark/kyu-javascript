@@ -1,5 +1,6 @@
 import { createContext, useContext, useState } from "react";
 import MOCK_DATA from "../mock";
+import { createGlobalStyle } from "styled-components";
 
 const PokemonContext = createContext();
 
@@ -13,17 +14,14 @@ export function PokemonProvider({ children }) {
 
   const addPokemon = (pokemon) => {
     //add로직
-
     if (selectedPokemon.length >= 6) {
       alert("최대 6개의 포켓몬만 선택할 수 있습니다.");
       return;
     }
-
     if (selectedPokemon.some((p) => p.id === pokemon.id)) {
       alert("이미 선택된 포켓몬입니다.");
       return;
     }
-
     setSelectedPokemon((prevSelected) => [...prevSelected, pokemon]);
   };
 
