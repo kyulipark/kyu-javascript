@@ -109,7 +109,6 @@ onst addPokemon = (pokemon) => {
 `PokemonList.jsx`에서는 `allPokemon`을 사용하였다. 
 
 </br> 
-</br> 
 이런 이슈가 있었어요‼️</br> 
  1️⃣ `PokemonCard.jsx`에서 '추가', '삭제' 버튼을 누르면 디테일페이지로 넘어간 후 돌아가기를 눌러야 추가, 삭제가되었는데 </br>
 해당 부분은  `event.stopPropagation();` 로 막을 수 있었다. ` preventDefault()`와 아래와 같은 차이점이 있다. </br>
@@ -124,7 +123,26 @@ onst addPokemon = (pokemon) => {
 
 
 
+</br> 
+</br> 
+</br> 
+💄 style: 스타일 컴포넌트로 css 작업 !!
+스타일 컴포넌트를 깔고나서 자동완성이 안된다면 아래의 익스텐션을 깔자.
+</br> 
+<img width="873" alt="스크린샷 2024-08-26 오후 2 59 05" src="https://github.com/user-attachments/assets/d201646c-31c1-4762-96ac-7a1481f416b6">
 
 
-‼️ 추후 수정할 것,
-Constext.jsx에 데이터를 담아 전역으로 불러올 수 있도록 수정해야할것같다!
+
+
+
+</br> 
+</br> 
+이런 이슈가 있었어요‼️</br> 
+</br> 
+1️⃣ `PokemonCard.jsx`에서 세부 스타일을 만지다 보니 `Dashboard.jsx`에 추가될 때에 너비가 줄어는 이슈가 있었다,</br> 
+해당 부분은 Card의 너비가 지정되지 않아서 그랬던 것이다. 세로 또는 가로가 마음대로 줄어든다면 너비나 높이를 지정해주자!
+ 
+</br> 
+</br> 
+스타일 컴포넌트는 코드의 맨 아래에 작성하면 더 깔끔하다.
+폰트와 모달도 반영하고 싶은데, 정보를 조금 더 찾아봐야할듯.
